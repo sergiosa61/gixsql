@@ -115,7 +115,8 @@ static std::string to_std_string(connect_to_info_t *i) { if (i) { char buffer [3
 %token LINKAGEEND
 %token LOCALSTORAGEBEGIN	"Begin of LOCAL-STORAGE SECTION"
 %token LOCALSTORAGEEND		"End of LOCAL-STORAGE SECTION"
-%token FD
+%token FD               "FILE description (FD)"
+%token SD               "SORT description (SD)"
 %token FILEBEGIN		"Begin of FILE SECTION"
 %token FILEEND			"End of FILE SECTION"
 %token PROCEDURE_DIVISION	"PROCEDURE DIVISION"
