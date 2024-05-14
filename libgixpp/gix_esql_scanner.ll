@@ -504,6 +504,10 @@ SUBSYSTEM "SQL"|"CICS"|"DLI"
 		return yy::gix_esql_parser::make_WHENEVER(loc);
 	}
 
+	{HOSTWORD} {
+		return yy::gix_esql_parser::make_HOSTTOKEN(yytext, loc);
+	}
+
 	({WORD}|{JPNWORD})+ {
 		__yy_push_state(ESQL_STATE); 
 
@@ -709,6 +713,7 @@ SUBSYSTEM "SQL"|"CICS"|"DLI"
 	}
      
 	"CURSOR" {
+			cur_token_list.push_back("CURSOR");
 			return yy::gix_esql_parser::make_CURSOR(loc);
 	 }
 

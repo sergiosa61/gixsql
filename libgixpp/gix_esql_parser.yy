@@ -645,6 +645,7 @@ CURSOR opt_with_hold FOR select { driver->cb_set_cursor_hold($2); }
 
 cursor_declaration_from_prepared_stmt:
 CURSOR opt_with_hold FOR strliteral_or_hostref { 
+        driver->cursor_from_prepared = true;
 	driver->cb_set_cursor_hold($2); 
 	driver->statement_source = $4;
 	driver->commandname = "SELECT";
